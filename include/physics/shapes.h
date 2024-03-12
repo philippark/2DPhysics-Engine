@@ -13,7 +13,11 @@ namespace physics {
 
     class Shape{
         virtual ~Shape(){};
-        virtual ShapeType getType() const;
+        virtual ShapeType getType() const = 0;
+    };
+
+    class Circle : public Shape{
+        ShapeType getType() const override {return ShapeType::Circle;}
     };
 }
 
