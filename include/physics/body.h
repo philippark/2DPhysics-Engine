@@ -3,23 +3,16 @@
 #include <SFML/Graphics.hpp>
 
 namespace physics {
-
-    class Circle{
+    class Body{
     public:
-        Circle(float radius_);
+        Body(sf::Shape* shape_, float mass_) {shape = shape_; mass = mass_;}
+
+        sf::Shape* getShape() {return shape;}
     private:
-        sf::CircleShape shape;
-        float radius;
+        sf::Shape* shape;
+        float mass;
+
     };
-
-    class Rectangle{
-    public:
-        Rectangle(float width_, float height_);
-    private:
-        sf::RectangleShape shape;
-        float width;
-        float height;
-    }
 }
 
 #endif
