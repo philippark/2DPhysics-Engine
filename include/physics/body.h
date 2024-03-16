@@ -2,20 +2,24 @@
 #define BODY_H
 #include <SFML/Graphics.hpp>
 
-class Body{
-public:
-    Body(sf::Shape);
+namespace physics {
 
-    const sf::Shape& getShape() const {return shape;};
+    class Circle{
+    public:
+        Circle(float radius_);
+    private:
+        sf::CircleShape shape;
+        float radius;
+    };
 
-private:
-    sf::Shape shape;
+    class Rectangle{
+    public:
+        Rectangle(float width_, float height_);
+    private:
+        sf::RectangleShape shape;
+        float width;
+        float height;
+    }
+}
 
-    float x_acceleration;
-    float y_acceleration;
-    float x_velocity;
-    float y_velocity;
-
-    //float mass;
-};
 #endif
