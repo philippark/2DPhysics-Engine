@@ -2,14 +2,16 @@
 #define WORLD_H
 #include <vector>
 #include <SFML/Graphics.hpp>
+#include "body.h"
 
 namespace physics {
     class World{
     public:
-        World();
+        void addBody(physics::Body body) {bodies.push_back(body);}
 
+        void step(float time_step);
     private:
-        std::vector<sf::Shape*> bodies;
+        std::vector<physics::Body> bodies;
         
     };
 }
