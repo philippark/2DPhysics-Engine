@@ -11,12 +11,8 @@ int main(){
     physics::Body body(&circle, 0);
     body.set_position(40, 40);
 
-    std::cout << "position for body: " << (body.getShape())->getPosition().x << std::endl;
-
     physics::Body body2(&circle, 0);
     body2.set_position(10, 10);
-
-    std::cout << "position for body2: " << (body2.getShape())->getPosition().x << std::endl;
 
     physics::World world;
     world.addBody(body);
