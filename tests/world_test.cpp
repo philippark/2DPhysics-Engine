@@ -9,13 +9,28 @@ int main(){
     circle.setPosition(10.f, 10.f);
 
     physics::Body body(&circle, 0);
-    
+    body.set_position(40, 40);
+
+    std::cout << "position for body: " << (body.getShape())->getPosition().x << std::endl;
+
+    physics::Body body2(&circle, 0);
+    body2.set_position(10, 10);
+
+    std::cout << "position for body2: " << (body2.getShape())->getPosition().x << std::endl;
 
     physics::World world;
     world.addBody(body);
+    world.addBody(body2);
 
+    std::vector<physics::Body> bodies = world.get_bodies();
+
+    for (int i = 0; i < bodies.size(); i++){
+        std::cout << i << "position: " << (bodies[i].getShape())->getPosition().x << std::endl;
+    }
 
     sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
+
+    float timestep = 0.1;
 
     while(window.isOpen()){
         sf::Event event;
@@ -26,8 +41,13 @@ int main(){
         }
         window.clear(sf::Color::Black);
 
+        world.update_world(timestep);
+        std::vector<physics::Body> bodies = world.get_bodies();
 
-        window.draw(*(body.getShape()));
+        for (int i = 0; i < bodies.size(); i++){
+            window.draw(*(bodies[i].getShape()));
+        }
+        
 
         window.display();
     }
