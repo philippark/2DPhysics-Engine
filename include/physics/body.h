@@ -3,12 +3,14 @@
 #include <SFML/Graphics.hpp>
 
 namespace physics {
-    class Circle{
+    class Body{
     public:
-        Circle(sf::CircleShape shape_, float mass_) {shape = shape_; mass = mass_;}
+        Body(sf::CircleShape shape_, float mass_) {shape = shape_; mass = mass_;}
 
         void set_position(float x, float y);
         void update_body(float timestep);
+
+        sf::CircleShape getShape() {return shape;}
     private:
         sf::CircleShape shape;
         float mass = 0;
