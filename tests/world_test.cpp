@@ -5,24 +5,14 @@
 
 int main(){
     sf::CircleShape circle(50);
-    circle.setFillColor(sf::Color::Green);
-    circle.setPosition(10.f, 10.f);
+    physics::Body body(circle, 0);
 
-    physics::Body body(&circle, 0);
-    body.set_position(40, 40);
-
-    physics::Body body2(&circle, 0);
-    body2.set_position(10, 10);
+    circle.move(50, 50);
+    physics::Body body2(circle, 0);
 
     physics::World world;
     world.addBody(body);
     world.addBody(body2);
-
-    std::vector<physics::Body> bodies = world.get_bodies();
-
-    for (int i = 0; i < bodies.size(); i++){
-        std::cout << i << "position: " << (bodies[i].getShape())->getPosition().x << std::endl;
-    }
 
     sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
 
@@ -41,7 +31,7 @@ int main(){
         std::vector<physics::Body> bodies = world.get_bodies();
 
         for (int i = 0; i < bodies.size(); i++){
-            window.draw(*(bodies[i].getShape()));
+            window.draw(bodies[i].getShape());
         }
         
 
