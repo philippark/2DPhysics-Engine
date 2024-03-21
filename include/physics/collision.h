@@ -3,11 +3,7 @@
 #include "body.h"
 
 namespace physics {
-    class Collision{
-    public:
-        bool isCollision(physics::Body a, physics::Body b);
-    private:   
+    bool isCollision(physics::Body a, physics::Body b);
 
-    };
 }
 #endif
