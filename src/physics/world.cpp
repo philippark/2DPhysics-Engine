@@ -25,3 +25,6 @@ void physics::World::update_world(float timestep){
         
     }
 }
+
+
+//now collide with walls

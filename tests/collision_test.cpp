@@ -9,10 +9,12 @@ int main(){
 
     physics::Body body(circle, 0);
     body.set_x_velocity(1);
+    body.set_y_velocity(1);
 
-    circle.move(300, 0);
+    circle.move(300, 300);
     physics::Body body2(circle, 0);
     body2.set_x_velocity(-1);
+    body2.set_y_velocity(-1);
     body2.set_color(sf::Color::Green);
     
     physics::World world;

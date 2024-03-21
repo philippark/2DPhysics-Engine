@@ -3,7 +3,7 @@ all: compile link
 compile:
 	g++ -c src/physics/world.cpp -IC:\sfml\src\include -I:
 	g++ -c src/physics/body.cpp -IC:\sfml\src\include -I:
-	#g++ -c src/physics/collision.cpp -IC:\sfml\src\include -I:
+	g++ -c src/physics/collision.cpp -IC:\sfml\src\include -I:
 
 	#test file:
 	g++ -c tests/collision_test.cpp -IC:\sfml\src\include -I:
