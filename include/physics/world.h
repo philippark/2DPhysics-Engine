@@ -3,6 +3,7 @@
 #include <vector>
 #include <SFML/Graphics.hpp>
 #include "body.h"
+#include "collision.h"
 
 namespace physics {
     class World{

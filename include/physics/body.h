@@ -7,8 +7,16 @@ namespace physics {
     public:
         Body(sf::CircleShape shape_, float mass_) {shape = shape_; mass = mass_;}
 
-        void set_position(float x, float y);
         void update_body(float timestep);
+
+        void set_position(float x, float y);
+        void set_x_velocity(int x_velocity_) {x_velocity = x_velocity_;}
+        void set_y_velocity(int y_velocity_) {y_velocity = y_velocity_;}
+
+        void set_color(sf::Color color) {shape.setFillColor(color);}
+
+        int get_x_velocity() {return x_velocity;}
+        int get_y_velocity() {return y_velocity;}
 
         sf::CircleShape getShape() {return shape;}
     private:
@@ -16,8 +24,8 @@ namespace physics {
         float mass = 0;
         float x_acceleration = 0;
         float y_acceleration = 0;
-        float x_velocity = 1;
-        float y_velocity = 1;
+        float x_velocity = 0;
+        float y_velocity = 0;
 
     };
 }

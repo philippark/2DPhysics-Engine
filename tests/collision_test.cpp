@@ -1,6 +1,5 @@
 #include <iostream>
 #include "../include/physics/world.h"
-#include "../include/physics/body.h"
 #include "../include/physics/collision.h"
 #include <SFML/Graphics.hpp>
 
@@ -9,10 +8,12 @@ int main(){
     sf::CircleShape circle(50);
 
     physics::Body body(circle, 0);
+    body.set_x_velocity(1);
 
-    circle.move(100, 100);
+    circle.move(300, 0);
     physics::Body body2(circle, 0);
-
+    body2.set_x_velocity(-1);
+    body2.set_color(sf::Color::Green);
     
     physics::World world;
     world.addBody(body);
