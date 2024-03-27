@@ -3,8 +3,8 @@
 #include "../include/physics/collision.h"
 #include <SFML/Graphics.hpp>
 
-float SCREEN_HEIGHT = 800;
-float SCREEN_WIDTH = 600;
+float SCREEN_WIDTH = 800;
+float SCREEN_HEIGHT = 600;
 
 int main(){
 
@@ -12,7 +12,7 @@ int main(){
 
     physics::Body body(circle, 0);
     body.set_position(100, 100);
-    body.set_x_velocity(1);
+    body.set_x_velocity(0);
     body.set_y_velocity(1);
 
     physics::Body body2(circle, 0);
@@ -32,7 +32,7 @@ int main(){
     //world.addBody(body2);
     //world.addBody(body3);
 
-    sf::RenderWindow window(sf::VideoMode(SCREEN_HEIGHT, SCREEN_WIDTH), "My window");
+    sf::RenderWindow window(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "My window");
 
     float timestep = 0.5;
 

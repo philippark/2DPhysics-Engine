@@ -11,6 +11,10 @@ void physics::World::update_world(float timestep){
         sf::CircleShape body = bodies[i].getShape();
         sf::Vector2f position =body.getPosition();
 
+        if (position.y + 2*body.getRadius() > screen_height){
+            bodies[i].set_y_velocity(-bodies[i].get_y_velocity());
+            body.setPosition(position.x, screen_height - 2*body.getRadius());
+        }
     }
 
     /*
