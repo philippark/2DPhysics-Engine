@@ -3,6 +3,7 @@
 #include "body.h"
 
 namespace physics {
+    bool isCollisionWall(physics::Body a);
     bool isCollision(physics::Body a, physics::Body b);
 
 }

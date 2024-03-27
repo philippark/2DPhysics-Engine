@@ -7,7 +7,7 @@ namespace physics {
     public:
         Body(sf::CircleShape shape_, float mass_) {shape = shape_; mass = mass_;}
 
-        void update_body(float timestep);
+        void move(float timestep);
 
         void set_position(float x, float y);
         void set_x_velocity(int x_velocity_) {x_velocity = x_velocity_;}

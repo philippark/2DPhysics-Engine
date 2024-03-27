@@ -26,12 +26,12 @@ int main(){
     
     physics::World world;
     world.addBody(body);
-    world.addBody(body2);
-    world.addBody(body3);
+    //world.addBody(body2);
+    //world.addBody(body3);
 
     sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
 
-    float timestep = 0.1;
+    float timestep = 0.5;
 
     while(window.isOpen()){
         sf::Event event;

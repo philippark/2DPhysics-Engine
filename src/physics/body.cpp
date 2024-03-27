@@ -7,6 +7,6 @@ void physics::Body::set_position(float x, float y){
 }
 
 
-void physics::Body::update_body(float timestep) {
+void physics::Body::move(float timestep) {
     shape.move(x_velocity * timestep, y_velocity * timestep);
 }

@@ -13,6 +13,10 @@ bool physics::isCollision(physics::Body a, physics::Body b){
 }
 */
 
+bool physics::isCollisionWall(physics::Body a){
+    return false;
+}
+
 bool physics::isCollision(physics::Body a, physics::Body b){
 
     sf::Vector2f a_pos = a.getShape().getPosition();
@@ -29,7 +33,10 @@ bool physics::isCollision(physics::Body a, physics::Body b){
 
     float y_distance = b_center_y - a_center_y;
 
-    return pow(x_distance, 2) + pow(y_distance, 2) <= pow(a.getShape().getRadius() + b.getShape().getRadius(), 2);
-    
-    //const bool collides = a_shape.getOrigin() - b_shape.getOrigin() 
+    float distance = pow(x_distance, 2) + pow(y_distance, 2);
+    if (distance == 0){
+        return false;
+    }
+
+    return distance <= pow(a.getShape().getRadius() + b.getShape().getRadius(), 2);
 }
