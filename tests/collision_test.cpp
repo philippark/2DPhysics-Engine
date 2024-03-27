@@ -17,8 +17,8 @@ int main(){
 
     physics::Body body2(circle, 0);
     body2.set_position(400, 400);
-    body2.set_x_velocity(-1);
-    body2.set_y_velocity(-1);
+    body2.set_x_velocity(1);
+    body2.set_y_velocity(0);
     body2.set_color(sf::Color::Green);
 
     physics::Body body3(circle, 0);
@@ -27,9 +27,9 @@ int main(){
     body3.set_y_velocity(1);
     body3.set_color(sf::Color::Blue);
     
-    physics::World world(SCREEN_HEIGHT, SCREEN_WIDTH);
+    physics::World world(SCREEN_WIDTH, SCREEN_HEIGHT);
     world.addBody(body);
-    //world.addBody(body2);
+    world.addBody(body2);
     //world.addBody(body3);
 
     sf::RenderWindow window(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "My window");
