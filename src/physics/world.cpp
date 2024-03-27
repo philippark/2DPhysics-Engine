@@ -7,6 +7,12 @@ void physics::World::update_world(float timestep){
         bodies[i].move(timestep);
     }
 
+    for (int i = 0; i < bodies.size(); i++){
+        sf::CircleShape body = bodies[i].getShape();
+        sf::Vector2f position =body.getPosition();
+
+    }
+
     /*
     for (int i = 0; i < bodies.size(); i++){
         for (int j = 0; j < bodies.size(); j++){

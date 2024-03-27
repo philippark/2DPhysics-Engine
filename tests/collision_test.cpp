@@ -3,6 +3,9 @@
 #include "../include/physics/collision.h"
 #include <SFML/Graphics.hpp>
 
+float SCREEN_HEIGHT = 800;
+float SCREEN_WIDTH = 600;
+
 int main(){
 
     sf::CircleShape circle(50);
@@ -24,12 +27,12 @@ int main(){
     body3.set_y_velocity(1);
     body3.set_color(sf::Color::Blue);
     
-    physics::World world;
+    physics::World world(SCREEN_HEIGHT, SCREEN_WIDTH);
     world.addBody(body);
     //world.addBody(body2);
     //world.addBody(body3);
 
-    sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
+    sf::RenderWindow window(sf::VideoMode(SCREEN_HEIGHT, SCREEN_WIDTH), "My window");
 
     float timestep = 0.5;
 

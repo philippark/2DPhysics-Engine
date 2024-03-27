@@ -8,6 +8,7 @@
 namespace physics {
     class World{
     public:
+        World(float screen_height_, float screen_width_) {screen_height = screen_height_; screen_width = screen_width_;}
         void addBody(physics::Body body) {bodies.push_back(body);}
         std::vector<physics::Body> get_bodies(){return bodies;}
         void step(float time_step);
@@ -15,6 +16,8 @@ namespace physics {
         void update_world(float timestep);
 
     private:
+        float screen_height;
+        float screen_width;
         std::vector<physics::Body> bodies;
         
     };

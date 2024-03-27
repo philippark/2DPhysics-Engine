@@ -13,10 +13,6 @@ bool physics::isCollision(physics::Body a, physics::Body b){
 }
 */
 
-bool physics::isCollisionWall(physics::Body a){
-    return false;
-}
-
 bool physics::isCollision(physics::Body a, physics::Body b){
 
     sf::Vector2f a_pos = a.getShape().getPosition();

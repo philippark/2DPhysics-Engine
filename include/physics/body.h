@@ -17,8 +17,9 @@ namespace physics {
 
         int get_x_velocity() {return x_velocity;}
         int get_y_velocity() {return y_velocity;}
+        sf::Vector2f get_position() {return shape.getPosition();}
 
-        sf::CircleShape getShape() {return shape;}
+        sf::CircleShape& getShape() {return shape;}
     private:
         sf::CircleShape shape;
         float mass = 0;
