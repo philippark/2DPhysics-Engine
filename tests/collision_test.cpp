@@ -30,7 +30,7 @@ int main(){
     physics::World world(SCREEN_WIDTH, SCREEN_HEIGHT);
     world.addBody(body);
     world.addBody(body2);
-    //world.addBody(body3);
+    world.addBody(body3);
 
     sf::RenderWindow window(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "My window");
 
