@@ -4,18 +4,18 @@
 
 void physics::World::update_world(float timestep){
     for (int i = 0; i < bodies.size(); i++){
-        bodies[i].move(timestep);
+        bodies[i].move(bodies[i].get_x_velocity() * timestep, bodies[i].get_y_velocity() * timestep);
     }
 
     for (int i = 0; i < bodies.size(); i++){
         sf::Vector2f position = bodies[i].getPosition();
 
         //bound off bottom
-        if (position.y + 2*body.getRadius() > screen_height){
+        if (position.y + 2*bodies[i].getRadius() > screen_height){
             bodies[i].set_y_velocity(-bodies[i].get_y_velocity());
-            body.setPosition(position.x, screen_height - 2*body.getRadius());
+            bodies[i].setPosition(position.x, screen_height - 2*bodies[i].getRadius());
         }
-
+    /*
         //bounce off top
         if (position.y < 0){
             bodies[i].set_y_velocity(-bodies[i].get_y_velocity());
@@ -53,10 +53,8 @@ void physics::World::update_world(float timestep){
             
             
         }
-        
+        */
     }
     
 }
 
-
-//now collide with walls

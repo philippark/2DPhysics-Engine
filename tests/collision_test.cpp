@@ -8,26 +8,24 @@ float SCREEN_HEIGHT = 600;
 
 int main(){
 
-    physics::Body2 bt(100,0);
-
     sf::CircleShape circle(50);
 
     physics::Body body(circle, 0);
-    body.set_position(100, 100);
+    body.setPosition(100, 100);
     body.set_x_velocity(0);
     body.set_y_velocity(1);
 
     physics::Body body2(circle, 0);
-    body2.set_position(400, 400);
+    body2.setPosition(400, 400);
     body2.set_x_velocity(1);
     body2.set_y_velocity(0);
-    body2.set_color(sf::Color::Green);
+    body2.setColor(sf::Color::Green);
 
     physics::Body body3(circle, 0);
-    body3.set_position(400, 100);
+    body3.setPosition(400, 100);
     body3.set_x_velocity(-1);
     body3.set_y_velocity(1);
-    body3.set_color(sf::Color::Blue);
+    body3.setColor(sf::Color::Blue);
     
     physics::World world(SCREEN_WIDTH, SCREEN_HEIGHT);
     world.addBody(body);
@@ -52,10 +50,7 @@ int main(){
 
         for (int i = 0; i < bodies.size(); i++){
             window.draw(bodies[i].getShape());
-        }
-
-        window.draw(bt);
-        
+        }       
 
         window.display();
     }
