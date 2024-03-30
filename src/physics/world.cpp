@@ -15,23 +15,23 @@ void physics::World::update_world(float timestep){
             bodies[i].set_y_velocity(-bodies[i].get_y_velocity());
             bodies[i].setPosition(position.x, screen_height - 2*bodies[i].getRadius());
         }
-    /*
+    
         //bounce off top
         if (position.y < 0){
             bodies[i].set_y_velocity(-bodies[i].get_y_velocity());
-            body.setPosition(position.x, 0);
+            bodies[i].setPosition(position.x, 0);
         }
 
         //bounce off right 
-        if (position.x + 2*body.getRadius() > screen_width){
+        if (position.x + 2*bodies[i].getRadius() > screen_width){
             bodies[i].set_x_velocity(-bodies[i].get_x_velocity());
-            body.setPosition(screen_width - 2*body.getRadius(), position.y);
+            bodies[i].setPosition(screen_width - 2*bodies[i].getRadius(), position.y);
         }
 
         //bounce off left 
         if (position.x < 0){
             bodies[i].set_x_velocity(-bodies[i].get_x_velocity());
-            body.setPosition(0, position.y);
+            bodies[i].setPosition(0, position.y);
         }
     }
 
@@ -53,7 +53,7 @@ void physics::World::update_world(float timestep){
             
             
         }
-        */
+        
     }
     
 }
