@@ -6,6 +6,7 @@ namespace physics {
     
     class Body{
     public:
+    /*
         Body(sf::CircleShape shape_, float mass_) {shape = shape_; mass = mass_;}
 
         void move(float timestep);
@@ -30,11 +31,11 @@ namespace physics {
         float y_velocity = 0;
 
     };
-    
+    */
 
-    class Body2 : public sf::CircleShape {
+    class Body : public sf::CircleShape {
         public:
-        Body2(float radius, float mass_) {this->setRadius(radius); mass = mass_;}
+        Body(float radius, float mass_) {this->setRadius(radius); mass = mass_;}
 
         void move(float timestep);
         void set_x_velocity(int x_velocity_) {x_velocity = x_velocity_;}

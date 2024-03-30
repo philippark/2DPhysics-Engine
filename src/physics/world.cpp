@@ -8,8 +8,7 @@ void physics::World::update_world(float timestep){
     }
 
     for (int i = 0; i < bodies.size(); i++){
-        sf::CircleShape body = bodies[i].getShape();
-        sf::Vector2f position =body.getPosition();
+        sf::Vector2f position = bodies[i].getPosition();
 
         //bound off bottom
         if (position.y + 2*body.getRadius() > screen_height){
