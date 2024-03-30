@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 
 namespace physics {
+    
     class Body{
     public:
         Body(sf::CircleShape shape_, float mass_) {shape = shape_; mass = mass_;}
@@ -28,6 +29,24 @@ namespace physics {
         float x_velocity = 0;
         float y_velocity = 0;
 
+    };
+    
+
+    class Body2 : public sf::CircleShape {
+        public:
+        Body2(float radius, float mass_) {this->setRadius(radius); mass = mass_;}
+
+        void move(float timestep);
+        void set_x_velocity(int x_velocity_) {x_velocity = x_velocity_;}
+        void set_y_velocity(int y_velocity_) {y_velocity = y_velocity_;}
+
+
+        private:
+        float mass = 0;
+        float x_acceleration = 0;
+        float y_acceleration = 0;
+        float x_velocity = 0;
+        float y_velocity = 0;
     };
 }
 

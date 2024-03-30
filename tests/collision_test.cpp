@@ -8,6 +8,8 @@ float SCREEN_HEIGHT = 600;
 
 int main(){
 
+    physics::Body2 bt(100,0);
+
     sf::CircleShape circle(50);
 
     physics::Body body(circle, 0);
@@ -51,6 +53,8 @@ int main(){
         for (int i = 0; i < bodies.size(); i++){
             window.draw(bodies[i].getShape());
         }
+
+        window.draw(bt);
         
 
         window.display();
