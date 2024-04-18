@@ -40,6 +40,8 @@ void physics::World::update_world(float timestep){
         for (int j = i+1; j < bodies.size(); j++){
             if (physics::isCollision(bodies[i], bodies[j])){
                 std::cout << "collided" << std::endl;
+
+                
                 float i_x = bodies[i].get_x_velocity();
                 float i_y = bodies[i].get_y_velocity();
                 bodies[i].set_x_velocity(bodies[j].get_x_velocity());
