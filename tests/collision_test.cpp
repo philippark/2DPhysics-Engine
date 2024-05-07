@@ -8,7 +8,7 @@ float SCREEN_HEIGHT = 600;
 
 int main(){
 
-    physics::Body body(50, 1);
+    physics::Body body(50, 5);
     body.setPosition(100, 100);
     body.set_x_velocity(0);
     body.set_y_velocity(1);
